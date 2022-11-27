@@ -19,3 +19,6 @@ mysqldump --no-tablespaces -h $DB_HOST -u $DB_USER  -p$DB_PASSWORD $DB_NAME > $b
 
 #Send to s3, using local path because of permissions issues and cronjob doesnt find aws cli in path
 AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID AWS_SECRET_ACCESS_KEY=$AWS_SECRET_ACCESS_KEY /usr/local/bin/aws s3 cp  $BACKUPROOT $S3BUCKET
+
+#Delete 7 days old backups
+find $BACKUPROOT -mtime +7 -exec rm {} \;

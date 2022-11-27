@@ -7,7 +7,7 @@ The script is designed to be run as a scheduled task on a ubuntu machine. It is 
 ## TODO
 - [] Add a check to see if the backup is already running
 - [] Add a check to see if the backup is already in S3
-- [] Add delete of old backups
+- [x] Add delete of old backups
 
 ## Requirements
 - AWS CLI
